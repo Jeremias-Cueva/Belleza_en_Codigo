@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Análisis Facial - Belleza en Código</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+</head>
+
+<body>
+  <nav>
+    <h1><img src="imagenes/logo.jpg" alt="Logo" class="logo"> Belleza en Código</h1>
+    <ul>
+      <li><a href="index.html#inicio">Inicio</a></li>
+      <li><a href="index.html#funciona">Cómo Funciona</a></li>
+      <li><a href="analisis.html">Análisis Facial</a></li>
+    </ul>
+  </nav>
+
+  <section class="contacto">
+    <h2>Sube tu foto para análisis facial</h2>
+    <p>Nuestra IA analizará tus rasgos para darte recomendaciones personalizadas.</p>
+
+    <form id="form-analisis">
+      <input type="file" accept="image/*" required id="foto">
+      <button type="submit" id="btn-analizar">Analizar mi rostro</button>
+    </form>
+
+    <div id="resultado" class="resultado-container" style="margin-top:2rem; min-height: 100px;">
+    </div>
+  </section>
+
+  <script type="module" src="js/subirImagen.js"></script>
+</body>
+
+</html>

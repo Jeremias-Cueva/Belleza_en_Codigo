@@ -1,0 +1,761 @@
+/* Reset basico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #4a3c4c; /* Color de texto base */
+    scroll-behavior: smooth;
+}
+
+/* Variables de color */
+:root {
+    --rosa-pastel: #f7c6c7;
+    --rosa-claro: #ffe8ea;
+    --rosa-medio: #f4a3a7;
+    --rosa-oscuro: #d66b72;
+    --gris-claro: #f9f6f7;
+    --gris-medio: #ddd6db;
+    --texto: #4a3c4c;
+}
+
+/* Navegacion */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--rosa-pastel);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 6px rgba(214,107,114,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav h1 {
+    font-size: 1.6rem;
+    color: var(--texto);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+nav .logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Si quieres que el logo sea circular */
+    object-fit: cover; /* Para asegurar que la imagen se ajuste bien si es circular */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--texto);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--rosa-oscuro);
+}
+
+/* Header Hero */
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: var(--rosa-claro);
+    padding: 3rem 2rem;
+    gap: 2rem;
+    min-height: 60vh;
+    text-align: center; /* Centrar texto en caso de que se apile */
+}
+
+.texto-hero {
+    flex: 1 1 350px;
+    max-width: 600px;
+}
+
+.texto-hero h2 {
+    font-size: 2.4rem;
+    color: var(--rosa-oscuro);
+    margin-bottom: 1rem;
+}
+
+.texto-hero p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--rosa-medio);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: var(--rosa-oscuro);
+}
+
+.imagen-hero {
+    flex: 1 1 350px; /* Permite que la imagen se adapte también */
+    display: flex; /* Centra la imagen */
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen-hero img {
+    max-width: 350px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(214,107,114,0.4);
+}
+
+/* Beneficios */
+.beneficios {
+    background: var(--gris-claro);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.beneficios h2 {
+    color: var(--rosa-oscuro);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    max-width: 1200px; /* Limita el ancho del grid */
+    margin: 0 auto; /* Centra el grid */
+}
+
+.beneficio {
+    background: white;
+    padding: 1.8rem 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(214,107,114,0.2);
+    transition: transform 0.3s ease;
+}
+
+.beneficio:hover {
+    transform: translateY(-8px);
+}
+
+.beneficio h3 {
+    color: var(--rosa-medio);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.beneficio p {
+    font-size: 1rem;
+    color: var(--texto);
+    line-height: 1.4;
+}
+
+/* Seccion Como Funciona */
+.funciona {
+    background: var(--gris-claro);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.funciona h2 {
+    color: var(--rosa-oscuro);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.pasos-funciona { /* Renombrado de fila-horizontal a pasos-funciona para claridad */
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    max-width: 1000px; /* Limita el ancho de los pasos */
+    margin: 0 auto;
+}
+
+.paso {
+    background: white;
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(214,107,114,0.2);
+    max-width: 280px;
+    flex: 1 1 280px;
+    transition: transform 0.3s ease;
+}
+
+.paso:hover {
+    transform: translateY(-6px);
+}
+
+/* Eliminado .paso img ya que no hay imagenes en los pasos en tu HTML */
+.paso h3 {
+    color: var(--rosa-medio);
+    margin-bottom: 0.8rem;
+}
+
+.paso p {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: var(--texto);
+}
+
+/* Seccion Acerca */
+.acerca {
+    padding: 3rem 2rem;
+    background: var(--rosa-claro);
+    text-align: center;
+}
+
+.acerca h2 {
+    color: var(--rosa-oscuro);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.acerca-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.mision-vision, .valores {
+    background: white;
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(214,107,114,0.3);
+    flex: 1 1 380px;
+}
+
+.mision-vision h3 {
+    color: var(--rosa-medio);
+    margin-bottom: 1rem;
+}
+
+.mision-vision p.cursiva {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--texto);
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+.valores h3 {
+    color: var(--rosa-medio);
+    margin-bottom: 1.2rem;
+}
+
+.valores-box p {
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 0.9rem;
+    color: var(--texto);
+    padding-left: 0.5rem;
+    border-left: 3px solid var(--rosa-medio);
+    transition: border-color 0.3s ease;
+}
+
+.valores-box p:hover {
+    border-color: var(--rosa-oscuro);
+}
+
+/* Seccion Contacto */
+.contacto {
+    padding: 3rem 2rem;
+    background: var(--gris-claro);
+    text-align: center; /* Centra el contenido de contacto */
+}
+
+.contacto h2 {
+    color: var(--rosa-oscuro);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.contacto p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: var(--texto);
+}
+
+.contacto form {
+    margin-top: 1.5rem;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contacto input,
+.contacto textarea {
+    padding: 0.9rem 1rem;
+    border: 2px solid var(--gris-medio);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+.contacto input:focus,
+.contacto textarea:focus {
+    border-color: var(--rosa-medio);
+    outline: none;
+}
+
+.contacto button {
+    padding: 0.9rem;
+    background-color: var(--rosa-medio);
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.contacto button:hover {
+    background-color: var(--rosa-oscuro);
+}
+
+/* Footer */
+footer {
+    background: var(--rosa-pastel);
+    padding: 1rem 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--texto);
+    box-shadow: inset 0 1px 4px rgba(214,107,114,0.3);
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--texto);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    margin: 0 0.5rem;
+}
+
+.footer-links a:hover {
+    color: var(--rosa-oscuro);
+}
+
+/* ======================================= */
+/* ESTILOS ESPECÍFICOS PARA ANÁLISIS FACIAL */
+/* ======================================= */
+
+/* Estilos para el contenedor de resultados de análisis */
+.resultado-container {
+    padding: 2rem;
+    max-width: 900px; /* Ancho máximo para el contenedor principal de resultados */
+    margin: 2rem auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(214,107,114,0.1);
+}
+
+/* Contenedor Flexbox para imagen y texto */
+.analysis-content-wrapper {
+    display: flex;
+    flex-direction: row; /* ¡CLAVE! Asegura que los elementos vayan en fila (imagen a la izquierda, texto a la derecha) */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan si no hay espacio horizontal */
+    justify-content: center; /* Centra los elementos horizontalmente (en la fila) */
+    align-items: flex-start; /* Alinea los elementos al inicio verticalmente (arriba), para que no se centren por alto */
+    gap: 2.5rem; /* Espacio entre la imagen y el texto */
+    padding: 1rem; /* Padding interno */
+}
+
+.analysis-image {
+    flex: 1 1 320px; /* Crece/encoge, con un tamaño base de 320px. */
+    max-width: 400px; /* Ancho máximo para la imagen */
+    min-width: 250px; /* Asegura que no se haga demasiado pequeña y fuerce el salto */
+    display: flex; /* Para centrar la imagen dentro de su propio div */
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    order: 1; /* ¡NUEVO! Le damos un orden de 1, para que esté a la izquierda cuando el otro sea orden 2 */
+}
+
+.analysis-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    object-fit: contain;
+}
+
+.analysis-text {
+    flex: 1 1 450px; /* Crece/encoge, con un tamaño base de 450px para el texto */
+    max-width: 500px; /* Ancho máximo para el texto */
+    min-width: 300px; /* Asegura que no se haga demasiado pequeña */
+    text-align: left;
+    padding: 1.8rem;
+    background: var(--rosa-claro);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(214,107,114,0.1);
+    order: 2; /* ¡NUEVO! Le damos un orden de 2, para que esté a la derecha */
+}
+
+.analysis-text p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: var(--texto);
+}
+
+.analysis-text strong {
+    color: var(--rosa-oscuro);
+    font-size: 1.2rem;
+}
+
+.analysis-text ul {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 0;
+}
+
+.analysis-text li {
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1.8rem;
+    line-height: 1.5;
+    color: var(--texto);
+}
+
+.analysis-text li::before {
+    content: '✨'; /* Puedes cambiar este ícono por el que prefieras */
+    position: absolute;
+    left: 0;
+    color: var(--rosa-medio);
+    font-size: 1.1em;
+    top: 0;
+}
+
+.analysis-text ul li > span { /* Si tus íconos ya están en el HTML/JS */
+    margin-right: 0.5rem;
+    font-size: 1.2em;
+    color: var(--rosa-oscuro);
+}
+
+/* ... (tu CSS existente antes de la sección de análisis facial) ... */
+
+/* ======================================= */
+/* ESTILOS ESPECÍFICOS PARA ANÁLISIS FACIAL */
+/* ======================================= */
+
+/* Estilos para el contenedor de resultados de análisis */
+.resultado-container {
+    padding: 3rem;
+    max-width: 1200px; /* ¡CLAVE! Aumenta aún más el ancho máximo del contenedor principal */
+    margin: 2rem auto;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(214,107,114,0.15);
+    /* border: 2px solid blue; /* TEMPORAL: Para ver el contenedor principal */ */
+}
+
+/* Contenedor Flexbox para imagen y texto */
+.analysis-content-wrapper {
+    display: flex;
+    flex-direction: row; /* ¡DEFINITIVO! Asegura que los elementos vayan en fila */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan SOLO si NO hay espacio */
+    justify-content: center; /* Centra los elementos horizontalmente (en la fila) */
+    align-items: flex-start; /* Alinea los elementos al inicio verticalmente (arriba) */
+    gap: 3rem; /* Espacio entre la imagen y el texto */
+    padding: 1.5rem;
+    /* border: 2px solid red; /* TEMPORAL: Para ver el wrapper interno */ */
+}
+
+.analysis-image {
+    flex: 1 1 350px; /* Reducimos el tamaño base ligeramente, pero damos más flexibilidad */
+    max-width: 420px; /* Ancho máximo de la imagen */
+    min-width: 250px; /* Asegura que no se haga demasiado pequeña */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    order: 1; /* Imagen a la izquierda */
+    /* border: 2px solid green; /* TEMPORAL: Para ver el div de la imagen */ */
+}
+
+.analysis-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    object-fit: contain;
+}
+
+.analysis-text {
+    flex: 1 1 500px; /* Reducimos el tamaño base del texto ligeramente, dando más flexibilidad */
+    max-width: 600px; /* Ancho máximo para el texto */
+    min-width: 320px; /* Asegura que no se haga demasiado pequeña */
+    text-align: left;
+    padding: 2.5rem;
+    background: var(--rosa-claro);
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(214,107,114,0.15);
+    order: 2; /* Texto a la derecha */
+    /* border: 2px solid orange; /* TEMPORAL: Para ver el div del texto */ */
+}
+
+.analysis-text p {
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    color: var(--texto);
+}
+
+.analysis-text strong {
+    color: var(--rosa-oscuro);
+    font-size: 1.3rem;
+}
+
+.analysis-text ul {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 0;
+}
+
+.analysis-text li {
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 2rem;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: var(--texto);
+}
+
+.analysis-text li::before {
+    content: '✨';
+    position: absolute;
+    left: 0;
+    color: var(--rosa-medio);
+    font-size: 1.2em;
+    top: 0;
+}
+
+.analysis-text ul li > span {
+    margin-right: 0.6rem;
+    font-size: 1.3em;
+    color: var(--rosa-oscuro);
+}
+
+/* Estilos específicos para la sección de recomendaciones de productos */
+.product-recommendations {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--gris-medio);
+    text-align: left;
+}
+
+.product-recommendations p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--texto);
+}
+
+.product-recommendations ul {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 0;
+}
+
+.product-recommendations li {
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+    padding-left: 1.8rem;
+    position: relative;
+    color: var(--texto);
+}
+
+.product-recommendations li::before {
+    content: '💄';
+    position: absolute;
+    left: 0;
+    color: var(--rosa-oscuro);
+    font-size: 1.1em;
+    top: 0;
+}
+
+.product-recommendations li strong {
+    color: var(--rosa-medio);
+}
+
+.product-recommendations .small-text {
+    font-size: 0.95rem;
+    margin-top: 1.5rem;
+    color: #666;
+    font-style: italic;
+    text-align: center;
+    border-top: 1px dashed var(--gris-claro);
+    padding-top: 1rem;
+}
+
+
+/* ======================================= */
+/* MEDIA QUERIES (RESPONSIVE DESIGN) */
+/* ======================================= */
+
+/* Media Queries para pantallas más pequeñas (teléfonos y tablets en vertical) */
+@media (max-width: 768px) {
+    /* ... (resto de tus estilos de navegación y secciones principales en móviles) ... */
+
+    /* MEDIA QUERIES ESPECÍFICAS PARA ANÁLISIS FACIAL EN MÓVILES */
+    .analysis-content-wrapper {
+        flex-direction: column; /* ¡CLAVE! Apila los elementos verticalmente en pantallas pequeñas */
+        align-items: center; /* Centra los elementos apilados */
+        gap: 2rem;
+    }
+
+    .analysis-image {
+        order: -1; /* Pone la imagen encima (primero) en móviles */
+        flex: 1 1 auto;
+        max-width: 95%;
+        min-width: unset; /* Quita el min-width para mayor flexibilidad en móviles */
+        padding: 0.5rem;
+    }
+
+    .analysis-text {
+        order: 0; /* El texto va después de la imagen en móviles */
+        flex: 1 1 auto;
+        max-width: 95%;
+        min-width: unset; /* Quita el min-width para mayor flexibilidad en móviles */
+        text-align: left;
+        padding: 1.5rem;
+    }
+
+    .analysis-text p {
+        font-size: 1rem;
+    }
+    .analysis-text strong {
+        font-size: 1.15rem;
+    }
+    .analysis-text li {
+        font-size: 0.95rem;
+    }
+    .analysis-text li::before {
+        font-size: 1.1em;
+    }
+    .analysis-text ul li > span {
+        font-size: 1.2em;
+    }
+
+    .product-recommendations p {
+        font-size: 1rem;
+    }
+}
+/* ======================================= */
+/* MEDIA QUERIES (RESPONSIVE DESIGN) */
+/* ======================================= */
+
+/* Media Queries para pantallas más pequeñas (teléfonos y tablets en vertical) */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+    nav h1 {
+        margin-bottom: 0.8rem;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: flex-start;
+        width: 100%; /* Para que los enlaces se expandan */
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+    .texto-hero h2 {
+        font-size: 2rem;
+    }
+    .imagen-hero img {
+        max-width: 250px;
+    }
+
+    .beneficios, .funciona, .acerca, .contacto {
+        padding: 2rem 1rem;
+    }
+    .beneficios h2, .funciona h2, .acerca h2, .contacto h2 {
+        font-size: 1.8rem;
+    }
+
+    .beneficios-grid, .pasos-funciona, .acerca-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+        gap: 1.5rem;
+    }
+
+    .mision-vision, .valores {
+        flex: 1 1 auto; /* Ocupa todo el ancho */
+        max-width: 95%; /* Pequeño margen */
+    }
+
+    .contacto form {
+        max-width: 95%; /* Se ajusta a pantallas pequeñas */
+    }
+
+
+    /* MEDIA QUERIES ESPECÍFICAS PARA ANÁLISIS FACIAL EN MÓVILES */
+    .analysis-content-wrapper {
+        flex-direction: column; /* ¡CLAVE! Apila los elementos verticalmente en pantallas pequeñas */
+        align-items: center; /* Centra los elementos apilados */
+        gap: 2rem;
+    }
+
+    .analysis-image {
+        order: -1; /* ¡IMPORTANTE! Pone la imagen encima (primero) en móviles */
+        flex: 1 1 auto; /* Permite que ocupe todo el ancho disponible */
+        max-width: 95%; /* Se ajusta al ancho del contenedor principal */
+        min-width: unset; /* Quita el min-width para mayor flexibilidad en móviles */
+    }
+
+    .analysis-text {
+        order: 0; /* El texto va después de la imagen en móviles */
+        flex: 1 1 auto;
+        max-width: 95%;
+        min-width: unset; /* Quita el min-width para mayor flexibilidad en móviles */
+        text-align: left; /* Alinea el texto a la izquierda en móviles */
+        padding: 1.5rem;
+    }
+
+    .analysis-text ul {
+        text-align: left;
+        margin-left: 0;
+        padding-left: 0;
+    }
+    .analysis-text li {
+        padding-left: 1.8rem;
+    }
+
+    .product-recommendations .small-text {
+        text-align: left; /* Mantiene este texto alineado a la izquierda en móviles */
+    }
+}
